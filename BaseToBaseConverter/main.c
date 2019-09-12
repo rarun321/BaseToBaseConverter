@@ -13,7 +13,7 @@
 int converter(int,int);
 bool checkIfNumberIsLowerThanBase(char[], char);
 int lengthOfArray(char[]);
-int convertToBase10(int);
+int convertToBase10(char[], char);
 
 //intial ask for base, value and what base they want converted to
 int main(int argc, const char * argv[]) {
@@ -35,7 +35,7 @@ int main(int argc, const char * argv[]) {
     printf("Enter base you want converted to: ");
     scanf("%d", &convertbase);
     
-    convertToBase10(((int) valueArray[0]));
+    convertToBase10((valueArray), base);
     return 0;
 }
 
@@ -60,8 +60,11 @@ int lengthOfArray(char valueArray[]){
 }
 
 // convert to base 10
-int convertToBase10(int value){
-    
+int convertToBase10(char value[] , char base){
+    int base10Value = 0;
+    for (int i = 0; i < lengthOfArray(value); i++) {
+        base10Value = base10Value + 
+    }
     return 0;
 }
 
