@@ -13,7 +13,9 @@
 int converter(int,int);
 bool checkIfNumberIsLowerThanBase(char[], char);
 int lengthOfArray(char[]);
+int convertToBase10(int);
 
+//intial ask for base, value and what base they want converted to
 int main(int argc, const char * argv[]) {
     
     char base;
@@ -32,9 +34,12 @@ int main(int argc, const char * argv[]) {
     
     printf("Enter base you want converted to: ");
     scanf("%d", &convertbase);
+    
+    convertToBase10(((int) valueArray[0]));
     return 0;
 }
 
+//check if value is allowed in that paticular base
 bool checkIfNumberIsLowerThanBase(char valueArray[], char base){
     for (int i = 0; i < lengthOfArray(valueArray); i++) {
         char value = valueArray[i];
@@ -45,12 +50,19 @@ bool checkIfNumberIsLowerThanBase(char valueArray[], char base){
     return true;
 }
 
+//count the number of elements in the array
 int lengthOfArray(char valueArray[]){
    int arrayLength = 0;
    for (int i =0; i < MaxLength && valueArray[i] != '\0'; i++) {
        arrayLength++;
    }
    return arrayLength;
+}
+
+// convert to base 10
+int convertToBase10(int value){
+    
+    return 0;
 }
 
 int converter(int number, int base){
