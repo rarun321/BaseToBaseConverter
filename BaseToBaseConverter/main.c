@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <math.h>
 
 #define MaxLength 1000
 int converter(int,int);
@@ -62,8 +63,12 @@ int lengthOfArray(char valueArray[]){
 // convert to base 10
 int convertToBase10(char value[] , char base){
     int base10Value = 0;
-    for (int i = 0; i < lengthOfArray(value); i++) {
-        base10Value = base10Value + 
+    int baseCount = 0;
+    for (int i = lengthOfArray(value) - 1; i >= 0; i--) {
+        int val = value[i] - '0';
+        int power = pow((base - '0'), baseCount);
+        base10Value = base10Value + (power * val);
+        baseCount++;
     }
     return 0;
 }
